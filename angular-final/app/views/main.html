@@ -1,0 +1,20 @@
+<div class="hero-unit">
+  <h3>TouK Reddit</h3>
+    <section id="main">
+        <ul id="link-list">
+            <li ng-repeat="link in links | orderBy:'score':true" ng-class="{exposed: link.score > 5}">
+                <div>
+                    <span>{{link.score}}</span>
+                    <a ng-click="up(link)">+</a>
+                    <a ng-click="down(link)">-</a>
+                    <a href="{{link.url}}">{{link.url}}</a>
+                </div>
+            </li>
+        </ul>
+        <form name="add" ng-submit="addLink(url)">
+            Add link: <input type="url" name="url" ng-model="url"/>
+            <div class="clearfix"></div>
+            <span class="alert-error" ng-show="add.url.$error.url">Not valid url!</span>
+        </form>
+    </section>
+</div>

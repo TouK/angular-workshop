@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Spec Runner</title>
+
+    <script type="text/javascript" src="lib/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="lib/jasmine/jasmine-html.js"></script>
+
+    <script type="text/javascript" src="../app/scripts/vendor/angular.js"></script>
+    <script type="text/javascript" src="../app/scripts/vendor/angular-resource.js"></script>
+    <script type="text/javascript" src="lib/angular-mocks.js"></script>
+
+    <script type="text/javascript" src="../app/scripts/yeoman.js"></script>
+    <script type="text/javascript" src="../app/scripts/controllers/main.js"></script>
+    <script type="text/javascript" src="../app/scripts/services/link.js"></script>
+
+    <script type="text/javascript" src="spec/controllers/main.js"></script>
+
+    <link rel="stylesheet" href="lib/jasmine/jasmine.css"/>
+
+
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+
+    // KICK OFF JASMINE
+    var jasmineEnv = jasmine.getEnv();
+    var trivialReporter = new jasmine.TrivialReporter();
+
+    jasmineEnv.addReporter(trivialReporter);
+
+    jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+    };
+
+    jasmineEnv.execute();
+
+</script>
+
+</body>
+
+</html>
